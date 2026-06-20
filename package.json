@@ -1,7 +1,7 @@
 {
-  "name": "qq-fanyi",
+  "name": "bat-translate",
   "version": "1.0.0",
-  "description": "QQ翻译 - 腾讯翻译桌面客户端",
+  "description": "BAT翻译 - 腾讯翻译桌面客户端",
   "main": "main.js",
   "author": "tutuos <tutuos@localhost>",
   "homepage": "https://fanyi.qq.com",
@@ -11,8 +11,8 @@
     "build": "electron-builder --linux"
   },
   "build": {
-    "appId": "com.qq-fanyi.app",
-    "productName": "QQ翻译",
+    "appId": "com.bat-translate.app",
+    "productName": "BAT翻译",
     "directories": {
       "output": "dist"
     },

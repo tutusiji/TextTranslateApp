@@ -24,7 +24,7 @@ function createWindow() {
   win = new BrowserWindow({
     width: 1290, height: 680,
     minWidth: 600, minHeight: 400,
-    title: 'QQ翻译',
+    title: 'BAT翻译',
     icon: path.join(__dirname, 'logo.png'),
     show: true,
     autoHideMenuBar: true,
@@ -54,7 +54,7 @@ function createWindow() {
 function createTray() {
   const icon = nativeImage.createFromPath(path.join(__dirname, 'logo.png')).resize({ width: 22, height: 22 });
   const tray = new Tray(icon);
-  tray.setToolTip('QQ翻译');
+  tray.setToolTip('BAT翻译');
   tray.setContextMenu(Menu.buildFromTemplate([
     { label: '显示/隐藏', click: toggle },
     { type: 'separator' },

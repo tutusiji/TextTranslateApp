@@ -34,14 +34,14 @@
 ### 方式一：AppImage（推荐）
 
 ```bash
-chmod +x QQ翻译-1.0.0.AppImage
-./QQ翻译-1.0.0.AppImage
+chmod +x BAT翻译-1.0.0.AppImage
+./BAT翻译-1.0.0.AppImage
 ```
 
 ### 方式二：Deb 包
 
 ```bash
-sudo dpkg -i qq-fanyi_1.0.0_amd64.deb
+sudo dpkg -i bat-translate_1.0.0_amd64.deb
 ```
 
 ## 快捷键配置
@@ -49,7 +49,7 @@ sudo dpkg -i qq-fanyi_1.0.0_amd64.deb
 F9 全局快捷键需在 GNOME 设置中注册：
 
 ```bash
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ name "QQ翻译 (F9)"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ name "BAT翻译 (F9)"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ command "curl -s http://127.0.0.1:19876/toggle"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ binding "F9"
 ```
@@ -57,8 +57,8 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 ## 下载
 
 - 📦 [最新 Release](https://github.com/tutusiji/TextTranslateApp/releases)
-- 🟢 [QQ翻译-1.0.0.AppImage](https://github.com/tutusiji/TextTranslateApp/releases/download/v1.0.0/QQ%E7%BF%BB%E8%AF%91-1.0.0.AppImage)
-- 📦 [qq-fanyi_1.0.0_amd64.deb](https://github.com/tutusiji/TextTranslateApp/releases/download/v1.0.0/qq-fanyi_1.0.0_amd64.deb)
+- 🟢 [BAT翻译-1.0.0.AppImage](https://github.com/tutusiji/TextTranslateApp/releases/download/v1.0.0/QQ%E7%BF%BB%E8%AF%91-1.0.0.AppImage)
+- 📦 [bat-translate_1.0.0_amd64.deb](https://github.com/tutusiji/TextTranslateApp/releases/download/v1.0.0/bat-translate_1.0.0_amd64.deb)
 
 ## 开发
 
