@@ -1,4 +1,4 @@
-# BAT翻译
+# <img src="logo.svg" width="32" align="left"> BAT翻译
 
 桌面翻译工具，集成有道翻译和腾讯翻译，支持 Tab 一键切换。
 
