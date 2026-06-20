@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { display:flex; flex-direction:column; height:100vh; background:#1a1a2e; font-family:system-ui,sans-serif; }
+#tabs { display:flex; padding:6px 8px 0; gap:2px; flex-shrink:0; }
+.tab { padding:8px 24px; border:none; background:transparent; color:#999; cursor:pointer; font-size:14px; border-radius:8px 8px 0 0; }
+.tab:hover { color:#ddd; }
+.tab.active { color:#fff; background:#16213e; font-weight:600; }
+#frame { flex:1; display:flex; }
+webview { flex:1; border:none; display:none; }
+webview.active { display:flex; }
+</style>
+</head>
+<body>
+<div id="tabs">
+  <button class="tab active" data-url="https://fanyi.youdao.com/#/TextTranslate">有道翻译</button>
+  <button class="tab" data-url="https://fanyi.qq.com/">腾讯翻译</button>
+</div>
+<div id="frame">
+  <webview class="active" id="wv0" src="https://fanyi.youdao.com/#/TextTranslate"></webview>
+  <webview id="wv1" src="https://fanyi.qq.com/"></webview>
+</div>
+<script>
+const css = {
+  youdao: '.top-banner-outer-container{display:none!important}',
+  qq: '.home-page-alert{display:none!important}'
+};
+
+// 持久化 Tab 选择
+const saved = localStorage.getItem('activeTab');
+const defaultTab = saved !== null ? parseInt(saved) : 0; // 默认有道
+
+const wvs = document.querySelectorAll('webview');
+const tabs = document.querySelectorAll('.tab');
+
+// 恢复上次 Tab
+tabs.forEach(t => t.classList.remove('active'));
+wvs.forEach(w => w.classList.remove('active'));
+tabs[defaultTab].classList.add('active');
+wvs[defaultTab].classList.add('active');
+
+wvs.forEach(wv => {
+  wv.addEventListener('did-finish-load', () => {
+    const key = wv.id === 'wv0' ? 'youdao' : 'qq';
+    wv.executeJavaScript(`(function(){
+      var s=document.createElement('style');
+      s.textContent='${css[key].replace(/'/g,"\\'")}';
+      document.head.appendChild(s);
+      setInterval(function(){
+        if(!document.getElementById('injected-css')){document.head.appendChild(s.cloneNode(true));s.id='injected-css';}
+      },2000);
+    })()`);
+  });
+});
+
+tabs.forEach((tab, i) => {
+  tab.onclick = () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    wvs.forEach(w => w.classList.remove('active'));
+    tab.classList.add('active');
+    wvs[i].classList.add('active');
+    localStorage.setItem('activeTab', i);
+  };
+});
+</script>
+</body>
+</html>

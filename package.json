@@ -1,0 +1,29 @@
+{
+  "name": "qq-fanyi",
+  "version": "1.0.0",
+  "description": "QQ翻译 - 腾讯翻译桌面客户端",
+  "main": "main.js",
+  "author": "tutuos <tutuos@localhost>",
+  "homepage": "https://fanyi.qq.com",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --linux"
+  },
+  "build": {
+    "appId": "com.qq-fanyi.app",
+    "productName": "QQ翻译",
+    "directories": {
+      "output": "dist"
+    },
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "category": "Office",
+      "icon": "logo.png"
+    }
+  },
+  "devDependencies": {
+    "electron": "^42.4.1",
+    "electron-builder": "^26.15.3"
+  }
+}
