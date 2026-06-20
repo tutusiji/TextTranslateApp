@@ -1,4 +1,4 @@
-# TextTranslateApp
+# BAT翻译
 
 桌面翻译工具，集成有道翻译和腾讯翻译，支持 Tab 一键切换。
 
@@ -29,20 +29,13 @@
 
 ![腾讯翻译](Snipaste_2026-06-20_19-25-31.png)
 
-## 安装
+## 下载
 
-### 方式一：AppImage（推荐）
+📦 [最新 Release](https://github.com/tutusiji/TextTranslateApp/releases)
 
-```bash
-chmod +x BAT翻译-1.0.0.AppImage
-./BAT翻译-1.0.0.AppImage
-```
-
-### 方式二：Deb 包
-
-```bash
-sudo dpkg -i bat-translate_1.0.0_amd64.deb
-```
+或直接下载：
+- 🟢 [BAT翻译.AppImage](https://github.com/tutusiji/TextTranslateApp/releases/latest/download/BAT%E7%BF%BB%E8%AF%91-1.0.0.AppImage)
+- 📦 [bat-translate.deb](https://github.com/tutusiji/TextTranslateApp/releases/latest/download/bat-translate_1.0.0_amd64.deb)
 
 ## 快捷键配置
 
@@ -54,28 +47,17 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ binding "F9"
 ```
 
-## 下载
-
-- 📦 [最新 Release](https://github.com/tutusiji/TextTranslateApp/releases)
-- 🟢 [BAT翻译-1.0.0.AppImage](https://github.com/tutusiji/TextTranslateApp/releases/download/v1.0.0/QQ%E7%BF%BB%E8%AF%91-1.0.0.AppImage)
-- 📦 [bat-translate_1.0.0_amd64.deb](https://github.com/tutusiji/TextTranslateApp/releases/download/v1.0.0/bat-translate_1.0.0_amd64.deb)
-
 ## 开发
 
 ```bash
-# 安装依赖
 npm install
-
-# 启动开发模式
 npm start
-
-# 构建
 npm run build
 ```
 
-## 发布流程
+## 发布
 
 ```bash
-npm version patch   # 升级版本号 (patch / minor / major)
-git push --tags     # 推送到 GitHub，自动触发 Actions 构建 Release
+npm version patch
+git push --tags
 ```
